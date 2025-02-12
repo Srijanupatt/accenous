@@ -1,93 +1,155 @@
 import React, { useState } from 'react';
-import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
-import { ChevronDown } from 'lucide-react';
-
+import { ArrowRight, ChevronDown, Search, Filter, Grid2X2, LayoutList,Twitter, Facebook, Linkedin, Instagram } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import heroImage from '../assets/image1.png';
+import logo from '../assets/healthify.png';
+import image2 from '../assets/image 26.png';
+import  ecoliving from '../assets/image 28.png';
+import GreenHive from '../assets/image 27.png';
+import Clarizone from '../assets/Clarizone Logo.png';
+
 
 export default function Homepage() {
   const navigate = useNavigate();
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [showMore, setShowMore] = useState(false);
+  const [viewType, setViewType] = useState('grid');
 
-  const featuredStartups = [
+  const filters = [
     {
-      logo: "/api/placeholder/200/200",
-      name: "GreenSpace",
-      description: "Innovative urban farming solutions transforming rooftops into productive spaces.",
-      raise: "15",
-      current: "10"
+      title: 'Listing Status',
+      options: [
+        { id: 'buy', label: 'Buy (3/63)', checked: true },
+        { id: 'off-market', label: 'Off-Market (69/64)', checked: false },
+        { id: 'invest', label: 'Invest (10)', checked: false },
+      ]
     },
     {
-      logo: "/api/placeholder/200/200",
-      name: "HealthHub",
-      description: "Empowering patients with personalized telemedicine and remote monitoring solutions.",
-      raise: "50",
-      current: "32"
+      title: 'Revenue-Generating',
+      options: [
+        { id: 'yes', label: 'Yes', checked: true },
+        { id: 'no', label: 'No', checked: false },
+      ]
     },
     {
-      logo: "/api/placeholder/200/200",
-      name: "EcomEdge",
-      description: "AI-driven ecommerce tool optimizing product listings, inventory, and sales growth.",
-      raise: "25",
-      current: "17"
+      title: 'Asset Type',
+      options: [
+        { id: 'online-business', label: 'Online Businesses', checked: true },
+        { id: 'amazon', label: 'Amazon Stores & MOP', checked: false },
+        { id: 'saas', label: 'SaaS', checked: false },
+        { id: 'ecommerce', label: 'E-commerce', checked: false },
+        { id: 'apps', label: 'AI Apps & Tools', checked: false },
+        { id: 'social', label: 'Social Media Account', checked: false },
+      ]
     },
     {
-      logo: "/api/placeholder/200/200",
-      name: "EcoRider",
-      description: "Eco-friendly electric bikes designed for urban commutes with a compact footprint.",
-      raise: "20",
-      current: "18"
+      title: 'Industry',
+      options: [
+        { id: 'technology', label: 'Technology', checked: true },
+        { id: 'education', label: 'Education', checked: false },
+        { id: 'health', label: 'Health & Wellness', checked: false },
+        { id: 'ecommerce-retail', label: 'E-commerce & Retail', checked: false },
+        { id: 'entertainment', label: 'Entertainment', checked: false },
+      ]
     }
   ];
 
-  const categories = [
+  const investments = [
     {
-      title: "Tech & Software",
-      description: "Cutting-edge solutions in software development, AI, and digital experiences.",
-      logos: Array(9).fill("/api/placeholder/100/100")
+      id: 1,
+      name: 'Healthify',
+      category: 'Health & Wellness',
+      logo: logo,
+      description: 'A health and wellness platform providing personalized fitness and diet plans. Connect with licensed nutritionists and the community.',
+      monetization: 'Subscription and Affiliate Sales',
+      Revenue: '₹8,43,250 per month',
+      age: '5 Years',
+      industry: 'Health & Wellness',
+      type: 'SaaS Platform',
+      value: '₹1,03,75,000'
     },
     {
-      title: "Health & Wellness",
-      description: "Discover startups focused on healthcare, wellness, and innovative solutions for a healthier lifestyle.",
-      logos: Array(9).fill("/api/placeholder/100/100")
+      id: 2,
+      name: 'EduMarket | Education',
+      category: 'Education',
+       logo: image2,
+      description: 'Online learning marketplace helping educators connect with students and sell courses at scale.',
+      monetization: 'Subscriptions and Services',
+      revenue: '₹4,53,200 per month',
+      age: '4 Years',
+      industry: 'Education',
+      type: 'Marketplace',
+      value: '₹26,55,148'
+    },{
+      i:3,
+      name: 'GreenHive Tech|Sustainability',
+      logo : GreenHive,
+      description: 'An eco focused startup that provides ,loT-based home gardening ,to reduce waste ,promote sustainable living.',
+      monetization: 'Subscriptions and Services',
+      revenue: '₹4,92,000 per month',
+      age: '3 Years',
+      industry: 'Education',
+      type: 'Marketplace',
+      value: '₹69,86,000'
     },
     {
-      title: "E-commerce & Retail",
-      description: "Innovative e-commerce and retail startups offering smart retail solutions.",
-      logos: Array(9).fill("/api/placeholder/100/100")
+      id:3,
+      name: 'Ecoliving Hub | Marketplace',
+
+      logo: ecoliving ,
+      description: 'offering a curated section of products like eco friendly packaging ,organic apparel,and zero waste essentials ,this platfrom promptes a sustainable lifestyle',
+      monetization: 'Sales ans Subscription MOdel',
+      Net_Profit: '₹3,98,000 per month',
+      age: '3 Years',
+      industry: 'Eco-products',
+      type: 'Marketplace',
+      value: '₹69,86,000'
+     
+    }
+    
+  ];
+  const testimonials = [
+    {
+      name: 'Priya Mehta',
+      title: 'Founder of EcoGen Solutions',
+      text: 'Clarizone has been a game-changer for us. Finding investors who believe in sustainable solutions was challenging, but this platform made the process so seamless and efficient.'
+    },
+    {
+      name: 'Arun Gupta',
+      title: 'Angel Investor, BrightFutures Network',
+      text: "Clarizone has become my go-to platform for finding innovative start-ups. The intuitive features and detailed insights made my decision-making faster and more. It's not just a marketplace, it's a partner in growth!"
+    },
+    {
+      name: 'Elena Martinez',
+      title: 'Co-Founder of EduTech Spark',
+      text: "Listing my start-up on Clarizone connected me with serious buyers faster than I could have imagined. The platform made everything easy and stress-free."
+    },
+    {
+      name: 'Michael Brown',
+      title: 'CEO of FitnessTrack Innovations',
+      text: "Clarizone's tools have helped me secure partnerships and boost sales. From inquiries to transactions, the entire process has been easy and effective."
+    },
+    {
+      name: 'Daniel Chen',
+      title: 'Venture Capitalist at NextGen Capital',
+      text: "Clarizone has a truly impressive range of start-up options and features that streamline the investment process. The detailed analytics and transparent information made it easy to make informed decisions."
+    },
+    {
+      name: 'Sarah Williams',
+      title: 'Small Business Owner, GreenBox Essentials',
+      text: "As a new vendor, Clarizone helped me connect with customers looking for eco-friendly products like ours. The visibility we gained and the straightforward setup were incredible. It's more than just a platform."
     }
   ];
 
-  const assetTypes = [
-    { id: 'online-business', label: 'Online Businesses' },
-    { id: 'amazon', label: 'Amazon Stores & KDP' },
-    { id: 'saas', label: 'SaaS' },
-    { id: 'ecommerce', label: 'Ecommerce' },
-    { id: 'apps', label: 'AI Apps & Tools' },
-    { id: 'social', label: 'Social Media Account' }
-  ];
 
-  const industries = [
-    { id: 'tech', label: 'Technology' },
-    { id: 'education', label: 'Education' },
-    { id: 'health', label: 'Health & Wellness' },
-    { id: 'ecommerce-retail', label: 'E-commerce & Retail' },
-    { id: 'entertainment', label: 'Entertainment' }
-  ];
-
-  const listingStatus = [
-    { id: 'buy', label: 'Buy (2,103)' },
-    { id: 'off-market', label: 'Off-Market (69.6K)' },
-    { id: 'invest', label: 'Invest (10)' }
-  ];
 
   return (
     <div className="min-h-screen bg-purple-50">
       {/* Navigation */}
       <nav className="flex justify-between items-center p-4 max-w-7xl mx-auto">
         <div className="flex items-center space-x-2">
-          <div className="w-8 h-8 bg-blue-600 rounded-full"></div>
-          <span className="font-bold text-xl">Startup Hub</span>
+          <div >
+          <img   src={Clarizone} alt="" />
+        </div>
+          
         </div>
         
         <div className="hidden md:flex space-x-6">
@@ -106,10 +168,10 @@ export default function Homepage() {
       <div className="max-w-7xl mx-auto px-4 py-16 grid md:grid-cols-2 gap-12 items-center">
         <div className="flex items-center justify-center">
           <img 
-            src="/api/placeholder/500/400" 
-            alt="Team illustration" 
-            className="w-full max-w-md"
-          />
+  src={heroImage}
+  alt="Team illustration" 
+  className="w-full max-w-md"
+/>
         </div>
 
         <div>
@@ -147,171 +209,261 @@ export default function Homepage() {
         </div>
       </div>
 
-      {/* Featured Startups Section */}
-      <div className="max-w-7xl mx-auto px-4 py-16">
-        <div className="text-center mb-12">
-          <h2 className="text-2xl font-bold mb-2">Promising Ventures At Your Fingertips</h2>
+      {/* Investment Explorer Section */}
+      <div className="max-w-7xl mx-auto p-6">
+        <div className="mb-8">
+          <h2 className="text-blue-900 font-bold">Find invesment Opportunoties </h2>
+          <h1 className="text-2xl font-bold mb-2">Explore Innovative Start-ups and Products</h1>
           <p className="text-gray-600">
-            Discover Our Featured Startups
-          </p>
-          <p className="text-gray-500 text-sm">
-            Explore a handpicked selection of high-growth start-ups, carefully curated for their innovation,
-            impact, and growth potential.
+            Explore a curated selection of promising startups across diverse industries. Find high-growth potential, 
+            emerging innovations, and early-stage investments favored by visionary investors.
           </p>
         </div>
 
-        <div className="relative">
-          <div className="flex overflow-hidden">
-            <div 
-              className="flex transition-transform duration-300" 
-              style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-            >
-              {featuredStartups.map((startup, index) => (
-                <div key={index} className="w-full min-w-full md:min-w-[50%] lg:min-w-[25%] p-4">
-                  <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 flex flex-col h-full">
-                    <div className="w-full h-32 bg-gray-50 rounded-lg mb-4 overflow-hidden">
-                      <img src={startup.logo} alt={startup.name} className="w-full h-full object-contain p-4" />
+        <div className="flex gap-8">
+          {/* Filters Sidebar */}
+          <div className="w-64 flex-shrink-0">
+            <div className="flex justify-between items-center mb-4">
+              <h2 className="font-semibold">Filter By</h2>
+              <button className="text-blue-600 text-sm">Clear</button>
+            </div>
+
+            <div className="space-y-6">
+              <div>
+                <label className="font-medium mb-2 block">Keyword</label>
+                <input
+                  type="text"
+                  placeholder="Enter keyword..."
+                  className="w-full p-2 border rounded-lg"
+                />
+              </div>
+
+              {filters.map((section) => (
+                <div key={section.title} className="border-t pt-4">
+                  <h3 className="font-medium mb-3 flex justify-between items-center">
+                    {section.title}
+                    <ChevronDown size={16} />
+                  </h3>
+                  <div className="space-y-2">
+                    {section.options.map((option) => (
+                      <label key={option.id} className="flex items-center space-x-2">
+                        <input
+                          type="checkbox"
+                          checked={option.checked}
+                          className="rounded border-gray-300"
+                        />
+                        <span className="text-sm">{option.label}</span>
+                      </label>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Main Content */}
+          <div className="flex-1">
+            <div className="flex justify-between items-center mb-6">
+              <div className="flex items-center space-x-2">
+                <div className="relative">
+                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={16} />
+                  <input
+                    type="text"
+                    placeholder="Search start-ups..."
+                    className="pl-10 pr-4 py-2 border rounded-lg w-64"
+                  />
+                </div>
+                <button 
+                  className="border rounded-lg p-2"
+                  onClick={() => setViewType('grid')}
+                >
+                  <Grid2X2 size={20} className={viewType === 'grid' ? 'text-blue-600' : 'text-gray-400'} />
+                </button>
+                <button 
+                  className="border rounded-lg p-2"
+                  onClick={() => setViewType('list')}
+                >
+                  <LayoutList size={20} className={viewType === 'list' ? 'text-blue-600' : 'text-gray-400'} />
+                </button>
+              </div>
+              <div className="flex items-center space-x-4">
+                <select className="border rounded-lg px-4 py-2">
+                  <option>Default</option>
+                  <option>Newest</option>
+                  <option>Price: Low to High</option>
+                  <option>Price: High to Low</option>
+                </select>
+                <button className="flex items-center space-x-2 border rounded-lg px-4 py-2">
+                  <Filter size={16} />
+                  <span>Hide Filters</span>
+                </button>
+              </div>
+            </div>
+
+            {/* Compact Investment Cards Grid */}
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {investments.map((investment) => (
+                <div key={investment.id} className="border rounded-lg overflow-hidden bg-white shadow-sm">
+                  {/* Compact Logo Section */}
+                  <div className="bg-teal-700 p-6 flex items-center justify-center">
+                    <img
+                      src={investment.logo}
+                      alt={investment.name}
+                      className="w-16 h-16 object-contain"
+                    />
+                  </div>
+                  
+                  {/* Compact Content Section */}
+                  <div className="p-3">
+                    <div className="flex justify-between items-start mb-2">
+                      <div>
+                        <h3 className="font-semibold text-md">{investment.name}</h3>
+                        <p className="text-blue-600 text-xs">{investment.category}</p>
+                     
+                      </div>
+                      <span className="text-xs px-1 py-0.5  bg-gray-100 rounded">Non-Profit</span>
                     </div>
-                    <h3 className="font-semibold text-lg mb-2">{startup.name}</h3>
-                    <p className="text-gray-600 text-sm flex-grow mb-4">{startup.description}</p>
-                    <div className="flex justify-between items-center text-sm">
-                      <div>
-                        <div className="text-gray-500">RAISE</div>
-                        <div className="font-semibold">₹{startup.raise} Lakhs</div>
-                      </div>
-                      <div>
-                        <div className="text-gray-500">CURRENT INVESTMENT</div>
-                        <div className="font-semibold">₹{startup.current} Lakhs</div>
-                      </div>
+                    
+                    <p className="text-gray-600 text-xs mb-3 line-clamp-2">{investment.description}</p>
+                    
+                    <div className="space-y-1 mb-3">
+                      {Object.entries({
+                        'Monetization:': investment.monetization,
+                        'NetProfot:': investment.revenue,
+                        'Age:': investment.age,
+                        'Industry:': investment.industry,
+                        'Type:': investment.type
+                      }).map(([label, value]) => (
+                        <div key={label} className="flex items-center text-xs">
+                          <span className="w-20 text-gray-500">{label}</span>
+                          <span className="flex-1 truncate">{value}</span>
+                        </div>
+                      ))}
+                    </div>
+                    
+                    <div className="text-md font-bold mb-2">{investment.value}</div>
+                    
+                    <div className="flex space-x-2">
+                      <button className="flex-1 px-2 py-1.5 border rounded-md text-xs hover:bg-gray-50">
+                        Save
+                      </button>
+                      <button className="flex-1 px-2 py-1.5 bg-blue-600 text-white rounded-md text-xs hover:bg-blue-700">
+                        Details
+                      </button>
                     </div>
                   </div>
                 </div>
               ))}
             </div>
           </div>
-          
-          <button 
-            className="absolute left-0 top-1/2 -translate-y-1/2 bg-white p-2 rounded-full shadow-lg"
-            onClick={() => setCurrentSlide(Math.max(0, currentSlide - 1))}
-          >
-            <ChevronLeft className="w-6 h-6" />
-          </button>
-          <button 
-            className="absolute right-0 top-1/2 -translate-y-1/2 bg-white p-2 rounded-full shadow-lg"
-            onClick={() => setCurrentSlide(Math.min(featuredStartups.length - 1, currentSlide + 1))}
-          >
-            <ChevronRight className="w-6 h-6" />
-          </button>
         </div>
-
-        {/* Categories Section */}
-        <div className="mt-24">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl font-bold mb-2">Browse Start-ups by Category</h2>
-            <p className="text-gray-500 text-sm">
-              Easily navigate through different start-up categories to discover opportunities that match your
-              investment focus. From tech innovations to sustainable solutions.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {categories.map((category, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-                <h3 className="font-semibold text-lg mb-3">{category.title}</h3>
-                <p className="text-gray-600 text-sm mb-4">{category.description}</p>
-                <div className="grid grid-cols-3 gap-4">
-                  {category.logos.map((logo, logoIndex) => (
-                    <div key={logoIndex} className="bg-gray-50 p-2 rounded-lg">
-                      <img src={logo} alt="Company logo" className="w-full h-12 object-contain" />
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="space-y-6">
         <div>
-          <h3 className="text-sm font-medium mb-2">Filter By</h3>
-          <div className="relative">
-            <input
-              type="text"
-              placeholder="Enter keyword"
-              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500"
-            />
-            <button className="absolute right-2 top-2 text-blue-500 text-sm">
-              Clear
-            </button>
-          </div>
-        </div>
-
-        <div>
-          <h3 className="text-sm font-medium mb-2">Listing Status</h3>
-          <div className="space-y-2">
-            {listingStatus.map((status) => (
-              <label key={status.id} className="flex items-center space-x-2">
-                <input type="checkbox" className="rounded text-blue-500" />
-                <span className="text-sm">{status.label}</span>
-              </label>
-            ))}
-          </div>
-        </div>
-
-        <div>
-          <h3 className="text-sm font-medium mb-2">Revenue-Generating</h3>
-          <div className="space-y-2">
-            <label className="flex items-center space-x-2">
-              <input type="checkbox" className="rounded text-blue-500" />
-              <span className="text-sm">Yes</span>
-            </label>
-            <label className="flex items-center space-x-2">
-              <input type="checkbox" className="rounded text-blue-500" />
-              <span className="text-sm">No</span>
-            </label>
-          </div>
-        </div>
-
-        <div>
-          <h3 className="text-sm font-medium mb-2">Asset Type</h3>
-          <div className="space-y-2">
-            {assetTypes.map((type) => (
-              <label key={type.id} className="flex items-center space-x-2">
-                <input type="checkbox" className="rounded text-blue-500" />
-                <span className="text-sm">{type.label}</span>
-              </label>
-            ))}
-          </div>
-        </div>
-
-        <div>
-          <h3 className="text-sm font-medium mb-2">Industry</h3>
-          <div className="space-y-2">
-            {industries.map((industry) => (
-              <label key={industry.id} className="flex items-center space-x-2">
-                <input type="checkbox" className="rounded text-blue-500" />
-                <span className="text-sm">{industry.label}</span>
-              </label>
-            ))}
-          </div>
-        </div>
-
-        <div className="space-y-2">
-          {['Monthly User', 'Monthly Revenue', 'Price Range', 'Age', 'Seller Location'].map((section) => (
-            <button
-              key={section}
-              className="flex items-center justify-between w-full py-2 text-sm"
-              onClick={() => setShowMore(!showMore)}
-            >
-              {section}
-              <ChevronDown className="w-4 h-4" />
-            </button>
-          ))}
-        </div>
-
-        <button className="text-blue-500 text-sm">Show More Filters</button>
+        <h3 className="text-sm text-blue-600 font-semibold">Real Stories From The People</h3>
+      <h1 className="text-3xl font-bold my-2 text-gray-900">Trusted by Visionaries, Entrepreneurs, and Investors Worldwide</h1>
+      <p className="text-gray-600 max-w-2xl mx-auto mb-8">
+        From buyers finding their perfect investment to vendors expanding their reach, each story reflects our commitment to empowering business growth.
+      </p>
       </div>
+    <div className="flex items-center justify-center space-x-4 p-4">
+     
+       <button className="px-3 py-2 rounded-full bg-gray-200  hover:bg-gray-300 transition">
+        &larr;
+      </button>
+       {[1,2,3,4,5].map((page)=>(
+         
+         <button key={page}  className={`inline-flex jusitfy-center items-center rounded-full px-3 py-2 ${page === 1 ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700'}` }> {page}</button>
+        ))}
+          {/* Right Arrow */}
+      <button className="px-3 py-2 rounded-full bg-gray-200  hover:bg-gray-300 transition">
+        &rarr;
+      </button>
+         </div>
+      <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+      {testimonials.map((t, index) => (
+          <div key={index} className="p-4 bg-purple-50 rounded-lg shadow-sm">
+            <p className="text-gray-700 italic mb-4">"{t.text}"</p>
+            <div className="text-left">
+              <h4 className="font-semibold text-gray-900">{t.name}</h4>
+              <p className="text-sm text-gray-500">{t.title}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      {/* Footer Section */}
+{/* Footer Section */}
+<footer className="bg-[#EEF1FF] px-4 py-8 mt-16">
+  <div className="max-w-7xl mx-auto">
+    {/* Upper Footer */}
+    <div className="flex flex-col md:flex-row justify-between items-center mb-8 space-y-4 md:space-y-0">
+      <h2 className="text-3xl font-bold text-gray-900">
+        Connecting Start-Ups With Investors<br />
+        To Fuel Innovation Globally.
+      </h2>
+      <div className="flex space-x-4">
+        <button className="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700">
+          Join Our Community
+        </button>
+        <button className="bg-black text-white px-6 py-3 rounded-full hover:bg-gray-800">
+          Contact Us
+        </button>
+      </div>
+    </div>
+
+    {/* Divider Line */}
+    <div className="relative">
+      <div className="absolute inset-0 flex items-center">
+        <div className="w-full border-t border-gray-200"></div>
+      </div>
+      <div className="relative flex justify-center">
+        <div className="bg-[#EEF1FF] px-4">
+        
+        </div>
+      </div>
+    </div>
+
+    {/* Lower Footer */}
+    <div className="pt-8">
+      <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+        {/* Logo and Brand */}
+        <div className="flex items-center space-x-2">
+          <div text-blue-600>
+          <img   src={Clarizone} alt="" />
+          
+          </div>
+         
+          
+        </div>
+
+        {/* Navigation Links */}
+        <div className="flex space-x-8">
+          <a href="#" className="text-gray-600 hover:text-gray-900">Home</a>
+          <a href="#" className="text-gray-600 hover:text-gray-900">How It Works</a>
+          <a href="#" className="text-gray-600 hover:text-gray-900">Plans & Pricing</a>
+          <a href="#" className="text-gray-600 hover:text-gray-900">Features</a>
+          <a href="#" className="text-gray-600 hover:text-gray-900">Products</a>
+        </div>
+
+        {/* Social Icons */}
+        <div className="flex space-x-4">
+          <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors">
+            <Linkedin className="w-5 h-5" />
+          </a>
+          <a href="#" className="text-gray-600 hover:text-blue-400 transition-colors">
+            <Instagram className="w-5 h-5" />
+          </a>
+          <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors">
+            <Facebook className="w-5 h-5" />
+          </a>
+          <a href="#" className="text-gray-600 hover:text-purple-950 transition-colors">
+            <Twitter className="w-5 h-5" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
       </div>
     </div>
   );
-}
+  }
