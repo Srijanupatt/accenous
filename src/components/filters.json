@@ -1,39 +1,38 @@
-
 [
   {
-   " title": "Listing Status",
-  "optionn": [
-      {"id": " buy , label: Buy (3/63)" },
-      {"id": "off-market, label: Off-Market (69/64)"},
-      {"id": "invest', label: 'Invest (10)"}
+    "title": "Listing Status",
+    "options": [
+      { "id": "buy", "label": "Buy (3/63)"},
+      { "id": "off-market", "label": "Off-Market (69/64)" },
+      { "id": "invest", "label": "Invest (10)" }
     ]
   },
   {
     "title": "Revenue-Generating",
     "options": [
-      { "id": "yes, label: Yes" },
-      { "id": "no, label: No" }
+      { "id": "yes", "label": "Yes" },
+      { "id": "no", "label": "No" }
     ]
   },
   {
     "title": "Asset Type",
-   "options": [
-      { "id": "'online-business', label: 'Online Businesses'" },
-      { "id": "'amazon', label: 'Amazon Stores & MOP" },
-      { "id": "'saas', label: SaaS" },
-      { "id":"ecommerce', label: 'E-commerce"},
-      { "id":"'apps', label: 'AI Apps & Tools'"},
-      { "id":"'social', label: 'Social Media Account'"}
+    "options": [
+      { "id": "online-business", "label": "Online Businesses" },
+      { "id": "amazon", "label": "Amazon Stores & MOP" },
+      { "id": "saas", "label": "SaaS" },
+      { "id": "ecommerce", "label": "E-commerce" },
+      { "id": "apps", "label": "AI Apps & Tools" },
+      { "id": "social", "label": "Social Media Account" }
     ]
   },
   {
     "title": "Industry",
     "options": [
-      { "id":"technology, label: Technology" },
-      { "id":"education, label: Education "},
-      { "id":"health ,label:Health & Wellness"},
-      { "id": "ecommerce-retail, label: E-commerce & Retail"},
-      { "id":"entertainment, label:Entertainment"}
+      { "id": "technology", "label": "Technology" },
+      { "id": "education", "label": "Education" },
+      { "id": "health", "label": "Health & Wellness" },
+      { "id": "ecommerce-retail", "label": "E-commerce & Retail" },
+      { "id": "entertainment", "label": "Entertainment" }
     ]
   }
 ]

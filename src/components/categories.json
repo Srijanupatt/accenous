@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Tech & Software",
+    "companies": ["/api/placeholder/60/60"],
+    "description": "Cutting-edge solutions in software development, AI, and digital transformation to help shape the digital experience."
+  },
+  {
+    "title": "Health & Wellness",
+    "companies": ["/api/placeholder/60/60"],
+    "description": "Discover startups focused on healthcare, wellness, and innovative solutions for a healthier lifestyle."
+  },
+  {
+    "title": "E-commerce & Retail",
+    "companies": ["Array(9).fill('/api/placeholder/60/60')"],
+    "description": "Innovative e-commerce and retail startups offering unique shopping experiences and smart retail solutions."
+  }
+]
