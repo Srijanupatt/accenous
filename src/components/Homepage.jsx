@@ -1,60 +1,23 @@
 import React, { useState } from 'react';
 import { ArrowRight, ChevronDown, Search, Filter, Grid2X2, LayoutList, Twitter, Facebook, Linkedin, Instagram, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import featuredStartups from './featuredStartups.json';
+ import investors from  './investors.json';
+// import filters from './filters.json';
+import investments from './investments.json';
 import heroImage from '../assets/image1.png';
-import logo from '../assets/healthify.png';
-import image2 from '../assets/image 26.png';
-import ecoliving from '../assets/image 28.png';
-import GreenHive from '../assets/image 27.png';
 import Clarizone from '../assets/Clarizone Logo.png';
-import GreenSpace from '../assets/greenSpace.png';
-import  healthhub from '../assets/healthhub.png';
-import  Ecomedge from '../assets/Ecom edge.png';
-import  bike from '../assets/bike.png';
 export default function Homepage() {
   const navigate = useNavigate();
   const [viewType, setViewType] = useState('grid');
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  const featuredStartups = [
-    {
-      name: 'Greenspace',
-      logo: GreenSpace,
-      description: 'Sustainable urban farming solutions transforming rooftops into productive green spaces',
-      raise: '₹15 Lakhs',
-      current: '₹10 Lakhs',
-      progress: 85
-    },
-    {
-      name: 'HealthHub',
-      logo: healthhub,
-      description: 'Empowering patients with personalized telemedicine and remote health monitoring',
-      raise: '₹50 Lakhs',
-      current: '₹24 Lakhs',
-      progress: 80
-    },
-    {
-      name: 'EcomEdge',
-      logo: Ecomedge,
-      description: 'E-commerce-focused retail optimizing product listings, inventory, and customer insights',
-      raise: '₹25 Lakhs',
-      current: '₹17 Lakhs',
-      progress: 88
-    },
-    {
-      name: 'EcoRider',
-      logo: bike,
-      description: 'Eco-friendly electric bikes designed for urban commutes with a compact design',
-      raise: '₹20 Lakhs',
-      current: '₹8 Lakhs',
-      progress: 40
-    }
-  ];
+
 
   const categories = [
     {
       title: 'Tech & Software',
-      companies: Array(9).fill('/api/placeholder/60/60'),
+     companies: Array(9).fill('/api/placeholder/60/60'),
       description: 'Cutting-edge solutions in software development, AI, and digital transformation to help shape the digital experience.',
     },
     {
@@ -73,134 +36,47 @@ export default function Homepage() {
     {
       title: 'Listing Status',
       options: [
-        { id: 'buy', label: 'Buy (3/63)', checked: true },
-        { id: 'off-market', label: 'Off-Market (69/64)', checked: false },
-        { id: 'invest', label: 'Invest (10)', checked: false },
+        { id: 'buy', label: 'Buy (3/63)' },
+        { id: 'off-market', label: 'Off-Market (69/64)'},
+        { id: 'invest', label: 'Invest (10)'},
       ]
     },
     {
       title: 'Revenue-Generating',
       options: [
-        { id: 'yes', label: 'Yes', checked: true },
-        { id: 'no', label: 'No', checked: false },
+        { id: 'yes', label: 'Yes' },
+        { id: 'no', label: 'No' },
       ]
     },
     {
       title: 'Asset Type',
       options: [
-        { id: 'online-business', label: 'Online Businesses', checked: true },
-        { id: 'amazon', label: 'Amazon Stores & MOP', checked: false },
-        { id: 'saas', label: 'SaaS', checked: false },
-        { id: 'ecommerce', label: 'E-commerce', checked: false },
-        { id: 'apps', label: 'AI Apps & Tools', checked: false },
-        { id: 'social', label: 'Social Media Account', checked: false },
+        { id: 'online-business', label: 'Online Businesses' },
+        { id: 'amazon', label: 'Amazon Stores & MOP' },
+        { id: 'saas', label: 'SaaS' },
+        { id: 'ecommerce', label: 'E-commerce' },
+        { id: 'apps', label: 'AI Apps & Tools' },
+        { id: 'social', label: 'Social Media Account' },
       ]
     },
     {
       title: 'Industry',
       options: [
-        { id: 'technology', label: 'Technology', checked: true },
-        { id: 'education', label: 'Education', checked: false },
-        { id: 'health', label: 'Health & Wellness', checked: false },
-        { id: 'ecommerce-retail', label: 'E-commerce & Retail', checked: false },
-        { id: 'entertainment', label: 'Entertainment', checked: false },
+        { id: 'technology', label: 'Technology' },
+        { id: 'education', label: 'Education' },
+        { id: 'health', label: 'Health & Wellness'},
+        { id: 'ecommerce-retail', label: 'E-commerce & Retail'},
+        { id: 'entertainment', label: 'Entertainment'},
       ]
     }
   ];
-
-  const investments = [
-    {
-      id: 1,
-      name: 'Healthify',
-      category: 'Health & Wellness',
-      logo: logo,
-      description: 'A health and wellness platform providing personalized fitness and diet plans. Connect with licensed nutritionists and the community.',
-      monetization: 'Subscription and Affiliate Sales',
-      Revenue: '₹8,43,250 per month',
-      age: '5 Years',
-      industry: 'Health & Wellness',
-      type: 'SaaS Platform',
-      value: '₹1,03,75,000'
-    },
-    {
-      id: 2,
-      name: 'EduMarket | Education',
-      category: 'Education',
-      logo: image2,
-      description: 'Online learning marketplace helping educators connect with students and sell courses at scale.',
-      monetization: 'Subscriptions and Services',
-      revenue: '₹4,53,200 per month',
-      age: '4 Years',
-      industry: 'Education',
-      type: 'Marketplace',
-      value: '₹26,55,148'
-    },
-    {
-      id: 3,
-      name: 'GreenHive Tech|Sustainability',
-      logo: GreenHive,
-      description: 'An eco focused startup that provides IoT-based home gardening to reduce waste, promote sustainable living.',
-      monetization: 'Subscriptions and Services',
-      revenue: '₹4,92,000 per month',
-      age: '3 Years',
-      industry: 'Education',
-      type: 'Marketplace',
-      value: '₹69,86,000'
-    },
-    {
-      id: 4,
-      name: 'Ecoliving Hub | Marketplace',
-      logo: ecoliving,
-      description: 'Offering a curated section of products like eco friendly packaging, organic apparel, and zero waste essentials, this platform promotes a sustainable lifestyle',
-      monetization: 'Sales and Subscription Model',
-      Net_Profit: '₹3,98,000 per month',
-      age: '3 Years',
-      industry: 'Eco-products',
-      type: 'Marketplace',
-      value: '₹69,86,000'
-    }
-  ];
-
-  const testimonials = [
-    {
-      name: 'Priya Mehta',
-      title: 'Founder of EcoGen Solutions',
-      text: 'Clarizone has been a game-changer for us. Finding investors who believe in sustainable solutions was challenging, but this platform made the process so seamless and efficient.'
-    },
-    {
-      name: 'Arun Gupta',
-      title: 'Angel Investor, BrightFutures Network',
-      text: "Clarizone has become my go-to platform for finding innovative start-ups. The intuitive features and detailed insights made my decision-making faster and more. It's not just a marketplace, it's a partner in growth!"
-    },
-    {
-      name: 'Elena Martinez',
-      title: 'Co-Founder of EduTech Spark',
-      text: "Listing my start-up on Clarizone connected me with serious buyers faster than I could have imagined. The platform made everything easy and stress-free."
-    },
-    {
-      name: 'Michael Brown',
-      title: 'CEO of FitnessTrack Innovations',
-      text: "Clarizone's tools have helped me secure partnerships and boost sales. From inquiries to transactions, the entire process has been easy and effective."
-    },
-    {
-      name: 'Daniel Chen',
-      title: 'Venture Capitalist at NextGen Capital',
-      text: "Clarizone has a truly impressive range of start-up options and features that streamline the investment process. The detailed analytics and transparent information made it easy to make informed decisions."
-    },
-    {
-      name: 'Sarah Williams',
-      title: 'Small Business Owner, GreenBox Essentials',
-      text: "As a new vendor, Clarizone helped me connect with customers looking for eco-friendly products like ours. The visibility we gained and the straightforward setup were incredible. It's more than just a platform."
-    }
-  ];
-
-  const handleSlideChange = (direction) => {
+const handleSlideChange = (direction) => {
     if (direction === 'next') {
       setCurrentSlide((prev) => (prev + 1) % featuredStartups.length);
     } else {
       setCurrentSlide((prev) => (prev - 1 + featuredStartups.length) % featuredStartups.length);
     }
-  };
+};
 
   return (
     <div className="min-h-screen bg-purple-50">
@@ -279,7 +155,7 @@ export default function Homepage() {
            
  
 
-{featuredStartups.map((startup, index) => (
+{featuredStartups.map((startup,index) => (
   <div 
     key={startup.name} 
     className={`w-full min-w-[280px] bg-white rounded-lg shadow-lg p-4 transition-transform duration-300 transform ${
@@ -358,7 +234,7 @@ export default function Homepage() {
                 {category.companies.map((logo, index) => (
                   <div
                     key={index}
-                    className="aspect-square bg-gray-50 rounded-lg flex items-center justify-center p-2 hover:bg-gray-100 transition-colors duration-200"
+                    className="aspect-square bg-gray-50 rounded-lg flex items-center justify-center p-2 hover:bg-gray-950-100 transition-colors duration-200"
                   >
                     <img src={logo} alt="Company logo" className="w-full h-full object-contain" />
                   </div>
@@ -398,22 +274,21 @@ export default function Homepage() {
                 />
               </div>
 
-              {filters.map((section) => (
-                <div key={section.title} className="border-t pt-4">
-                  <h3 className="font-medium mb-3 flex justify-between items-center cursor-pointer hover:text-blue-600">
-                    {section.title}
-                    <ChevronDown size={16} />
-                  </h3>
-                  <div className="space-y-2">
-                    {section.options.map((option) => (
-                      <label key={option.id} className="flex items-center space-x-2 cursor-pointer">
-                        <input
-                          type="checkbox"
-                          checked={option.checked}
-                          className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
-                        />
-                        <span className="text-sm">{option.label}</span>
-                      </label>
+              {filters.map((section, sectionIndex) => (
+            <div key={sectionIndex} className="border-t pt-4">
+              <h3 className="font-medium mb-3 flex justify-between items-center cursor-pointer hover:text-blue-600">
+                {section.title}
+                <ChevronDown size={16} />
+              </h3>
+              <div className="space-y-2">
+                {section.options.map((option) => (
+                  <label key={option.id} className="flex items-center space-x-2 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                    />
+                    <span className="text-sm">{option.label}</span>
+                  </label>
                     ))}
                   </div>
                 </div>
@@ -519,7 +394,7 @@ export default function Homepage() {
           </div>
         </div>
 
-        {/* Testimonials Section */}
+        {/* Investors Section */}
         <div className="mt-16">
           <h3 className="text-sm text-blue-600 font-semibold">Real Stories From The People</h3>
           <h1 className="text-3xl font-bold my-2 text-gray-900">Trusted by Visionaries, Entrepreneurs, and Investors Worldwide</h1>
@@ -528,12 +403,12 @@ export default function Homepage() {
           </p>
 
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            {testimonials.map((testimonial, index) => (
+            {investors.map((investors, index) => (
               <div key={index} className="p-4 bg-purple-50 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
-                <p className="text-gray-700 italic mb-4">"{testimonial.text}"</p>
+                <p className="text-gray-700 italic mb-4">"{investors.text}"</p>
                 <div className="text-left">
-                  <h4 className="font-semibold text-gray-900">{testimonial.name}</h4>
-                  <p className="text-sm text-gray-500">{testimonial.title}</p>
+                  <h4 className="font-semibold text-gray-900">{investors.name}</h4>
+                  <p className="text-sm text-gray-500">{investors.title}</p>
                 </div>
               </div>
             ))}

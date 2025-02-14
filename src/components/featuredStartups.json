@@ -1,0 +1,36 @@
+
+[
+  {
+     "name": "Greenspace",
+     "logo":"/src/assets/greenSpace.png",
+     "description": "Sustainable urban farming solutions transforming rooftops into productive green spaces",
+      "raise": "₹15 Lakhs",
+      "current": "₹10 Lakhs",
+      "progress": 85 
+  },
+  {
+      "name": "HealthHub",
+      "logo": "/src/assets/healthhub.png",
+      "description": "Empowering patients with personalized telemedicine and remote health monitoring",
+      "raise": "₹50 Lakhs",
+      "current": "₹24 Lakhs",
+      "progress": 80
+
+  },
+  {
+    "name": "EcomEdge",
+    "logo":  "/src/assets/Ecom edge.png",
+    "description": "E-commerce-focused retail optimizing product listings, inventory, and customer insights",
+    "raise": "₹25 Lakhs",
+    "current":"₹17 Lakhs",
+    "progress": 88
+  },
+  {
+   " name" : "EcoRider",
+    "logo": "src/assets/bike.png",
+    "description": "Eco-friendly electric bikes designed for urban commutes with a compact design",
+    "raise": "₹20 Lakhs",
+    "current":"₹8 Lakhs",
+    "progress": 40
+  }
+]
