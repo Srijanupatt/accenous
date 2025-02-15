@@ -6,6 +6,8 @@ import investors from './investors.json';
 import filters from './filters.json';
 import investments from './investments.json';
 import heroImage from '../assets/image1.png';
+import categories from './categories.json';
+
 import Clarizone from '../assets/Clarizone Logo.png';
 
 export default function Homepage() {
@@ -20,23 +22,7 @@ export default function Homepage() {
     'Industry': []
   });
 
-  const categories = [
-    {
-      title: 'Tech & Software',
-      companies: Array(9).fill('/api/placeholder/60/60'),
-      description: 'Cutting-edge solutions in software development, AI, and digital transformation.',
-    },
-    {
-      title: 'Health & Wellness',
-      description: 'Discover startups focused on healthcare and wellness solutions.',
-      companies: Array(9).fill('/api/placeholder/60/60')
-    },
-    {
-      title: 'E-commerce & Retail',
-      description: 'Innovative e-commerce startups with unique shopping experiences.',
-      companies: Array(9).fill('/api/placeholder/60/60')
-    }
-  ];
+
 
   const handleSlideChange = (direction) => {
     if (direction === 'next') {
@@ -63,31 +49,6 @@ export default function Homepage() {
       'Industry': []
     });
   };
-
-  const filteredInvestments = investments.filter(investment => {
-    return Object.entries(selectedFilters).every(([filterTitle, selectedOptions]) => {
-      if (selectedOptions.length === 0) return true;
-      
-      let investmentValue;
-      switch (filterTitle) {
-        case 'Listing Status':
-          investmentValue = investment.listingStatus;
-          break;
-        case 'Revenue-Generating':
-          investmentValue = investment.revenueGenerating ? 'yes' : 'no';
-          break;
-        case 'Asset Type':
-          investmentValue = investment.assetType;
-          break;
-        case 'Industry':
-          investmentValue = investment.industry;
-          break;
-        default:
-          return true;
-      }
-      return selectedOptions.includes(investmentValue);
-    });
-  });
 
   return (
     <div className="min-h-screen bg-purple-50">
@@ -282,9 +243,9 @@ export default function Homepage() {
 
             {/* Investment Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {filteredInvestments.map((investment) => (
+            {investments.map((investment) => (
                 <div key={investment.id} className="border rounded-lg bg-white shadow-sm hover:shadow-md transition-shadow">
-                  <div className="bg-teal-700 p-6 flex items-center justify-center">
+                  <div className="bg-blue-300 p-6 flex items-center justify-center">
                     <img src={investment.logo} alt={investment.name} className="w-16 h-16 object-contain" />
                   </div>
                   <div className="p-4">
