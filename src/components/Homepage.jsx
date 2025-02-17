@@ -197,7 +197,7 @@ export default function Homepage() {
                 ))}
                 <div className='space-x-3'>
                   {filters1.map((section1)=>(
-                 <h3 className="font-medium mb-2 flex justify-between items-center border-t">
+                 <h3 className="font-sm mb-2 flex justify-between items-center border-t">
                   {section1.title}
                   <ChevronRight size={20}/>
                   </h3>
