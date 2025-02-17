@@ -21,7 +21,7 @@ export default function Homepage() {
     'Revenue-Generating': [],
     'Asset Type': [],
     'Industry': [],
-     });
+  });
 
   const handleFilterChange = (filterTitle, optionId, isChecked) => {
     setSelectedFilters(prev => ({
@@ -38,8 +38,6 @@ export default function Homepage() {
       'Revenue-Generating': [],
       'Asset Type': [],
       'Industry': [],
-      'monthlyUser':[],
-     
     });
   };
 
@@ -58,6 +56,7 @@ export default function Homepage() {
           Get Started
         </button>
       </nav>
+
       {/* Hero Section */}
       <div className="max-w-7xl mx-auto px-4 py-8 md:py-16 grid md:grid-cols-2 gap-8 items-center">
         <img src={heroImage} alt="Team illustration" className="w-full max-w-md mx-auto md:order-1" />
@@ -85,13 +84,14 @@ export default function Homepage() {
             onClick={() => navigate('/dashboard')}
             className="bg-blue-600 text-white px-4 py-2 md:px-6 md:py-3 rounded-full hover:bg-blue-700 flex items-center space-x-2 mx-auto md:mx-0"
           >
-            <span>Join Now</span>
+           
             <ArrowRight className="w-4 h-4" />
           </button>
         </div>
       </div>
+
       {/* Featured Startups Section */}
-      <div className="max-w-7xl mx-auto px-4 py-8 md:py-16">
+      <div className="max-w-7xl mx-auto px-2 py-4 md:py-16">
         <h1 className="text-2xl md:text-3xl font-bold text-center mb-4">Featured Startups</h1>
         <div className="relative px-8">
           <div className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide">
@@ -166,7 +166,7 @@ export default function Homepage() {
           </button>
 
           {/* Filters Sidebar */}
-          <div className={`${showFilters ? "block" : "hidden"} md:block w-mid md:w-50 transition-all duration-300`}>
+          <div className={`${showFilters ? "block" : "hidden"} md:block w-full md:w-64 transition-all duration-300`}>
             <div className="bg-white p-4 rounded-lg shadow-lg">
               <div className="flex justify-between items-center mb-2">
                 <h2 className="font-semibold">Filter By</h2>
@@ -179,7 +179,6 @@ export default function Homepage() {
                       {section.title}
                       <ChevronDown size={20}/>
                     </h3>
-                    
                     <div className="space-y-2">
                       {section.options.map((option) => (
                         <label key={option.id} className="flex items-center space-x-2">
@@ -188,21 +187,20 @@ export default function Homepage() {
                             checked={selectedFilters[section.title].includes(option.id)}
                             onChange={(e) => handleFilterChange(section.title, option.id, e.target.checked)}
                           />
-                         <span className="text-sm">{option.label}</span>
-                     </label>
+                          <span className="text-sm">{option.label}</span>
+                        </label>
                       ))}
-                        <button onClick={clearFilters} className="text-blue-600 text-sm">more</button>
                     </div>
                   </div>
                 ))}
-                <div className='space-x-3'>
-                  {filters1.map((section1)=>(
-                 <h3 className="font-sm mb-2 flex justify-between items-center border-t">
-                  {section1.title}
-                  <ChevronRight size={20}/>
-                  </h3>
-                   ))}               
-                  </div>
+                <div>
+                  {filters1.map((section1) => (
+                    <h3 key={section1.title} className="font-medium mb-2 flex justify-between items-center">
+                      {section1.title}
+                      <ChevronRight size={20}/>
+                    </h3>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -242,8 +240,8 @@ export default function Homepage() {
             </div>
 
             {/* Investment Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {investments.map((investment) => (
+            <div className={`grid ${viewType === 'grid' ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3' : 'grid-cols-1'} gap-4`}>
+              {investments.map((investment) => (
                 <div key={investment.id} className="border rounded-lg bg-white shadow-sm hover:shadow-md transition-shadow">
                   <div className="bg-blue-300 p-6 flex items-center justify-center">
                     <img src={investment.logo} alt={investment.name} className="w-16 h-16 object-contain" />
@@ -316,7 +314,7 @@ export default function Homepage() {
         </div>
       </div>
 
-      {/*Footer*/}
+      {/* Footer */}
       <footer className="bg-[#EEF1FF] px-4 py-8 mt-8 w-full">
         <div className="max-w-7xl mx-auto flex flex-col justify-between min-h-[200px]">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-8">
@@ -347,12 +345,12 @@ export default function Homepage() {
               <Linkedin className="w-5 h-5 text-blue-600 hover:text-blue-800" />
               <Instagram className="w-5 h-5 text-pink-600 hover:text-pink-800" />
               <Facebook className="w-5 h-5 text-blue-600 hover:text-blue-800" />
-              <Twitter className="w-5 h-5 text-blue-400 hover:text-blue-600" />
-            </div>
-          </div>
-        </div>
-      </footer>
-      
-    </div>
-  );
+<Twitter className="w-5 h-5 text-blue-400 hover:text-blue-600" />
+</div>
+</div>
+</div>
+</footer>
+
+</div>
+);
 }

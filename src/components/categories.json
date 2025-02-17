@@ -1,17 +1,47 @@
 [
   {
     "title": "Tech & Software",
-    "companies": ["/api/placeholder/60/60"],
+    "companies": [
+      "/src/assets/image12.png",
+      "/src/assets/image 13.png",
+      "/src/assets/image 21.png",
+      "/src/assets/image 12.png",
+      "/src/assets/image 14.png",
+      "/src/assets/image12.png",
+      "/src/assets/image 13.png",  
+       "/src/assets/image 21.png",
+      "/src/assets/image 21.png"
+    ],
     "description": "Cutting-edge solutions in software development, AI, and digital transformation to help shape the digital experience."
   },
   {
     "title": "Health & Wellness",
-    "companies": ["/api/placeholder/60/60"],
+    "companies": [
+      "/src/assets/image12.png",
+      "/src/assets/image 13.png",
+      "/src/assets/image 18.png",
+      "/src/assets/MindBloom.png",
+      "/src/assets/image 31.png",
+      "/src/assets/image 30.png",
+      "/src/assets/image 29.png",
+      "/src/assets/image 31.png",
+      "/src/assets/image 30.png"
+    ],
     "description": "Discover startups focused on healthcare, wellness, and innovative solutions for a healthier lifestyle."
   },
   {
     "title": "E-commerce & Retail",
-    "companies": ["Array(9).fill('/api/placeholder/60/60')"],
+    "companies": ["/src/assets/image12.png",
+    "/src/assets/image 21.png",
+    "/src/assets/image 18.png",
+    "/src/assets/image 27.png",
+    "/src/assets/image1.png",
+    "/src/assets/MediConnect.png",
+    "/src/assets/image 13.png",
+    "/src/assets/image MindBloom.png",
+    "/src/assets/image 21.png"
+   
+  ],
     "description": "Innovative e-commerce and retail startups offering unique shopping experiences and smart retail solutions."
   }
 ]

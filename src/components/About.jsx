@@ -521,39 +521,3 @@ export default function Homepage() {
     </div>
   );
   }
-<footer className="bg-[#EEF1FF] px-4 py-8 mt-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-8">
-            <h2 className="text-2xl md:text-3xl font-bold text-center md:text-left">
-              Connecting Startups & Investors
-            </h2>
-            <div className="flex flex-col sm:flex-row gap-2">
-              <button className="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700">
-                Join Community
-              </button>
-              <button className="bg-black text-white px-4 py-2 rounded-full hover:bg-gray-800">
-                Contact Us
-              </button>
-            </div>
-          </div>
-          <div className="border-t border-gray-200 my-6 md-auto"></div>
-
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <img src={Clarizone} alt="Clarizone Logo" className="w-32" />
-            <div className="flex flex-wrap justify-center gap-4">
-              <a href="#" className="text-gray-900 hover:text-gray-900 font-medium">Home</a>
-              <a href="#"className='text-gray-900 hover:text-gray-900 font-black font-medium'>How it Works</a>
-              <a href="#" className="text-gray-950 hover:text-gray-900  font-medium">Plans & Pricing</a>
-               <a href="#" className="text-gray-950 hover:text-gray-900 font-medium">Feature</a>
-               <a href="#" className="w-1688,h-450 text-gray-950 hover:text-gray-900 font-medium">Products</a>
-
-            </div>
-            <div className="flex gap-4 width-168 h-45 l-20px ">
-              <Linkedin className="w-5 h-5 text-blue-600 hover:text-blue-600" />
-              <Instagram className="w-5 h-5 text-blue-600 hover:text-pink-600" />
-              <Facebook className="w-5 h-5 text-blue-600 hover:text-blue-600" />
-              <Twitter className="w-5 h-5 text-blue-600 hover:text-blue-400" />
-            </div>
-          </div>
-        </div>
-      </footer>
