@@ -4,14 +4,15 @@ import { useNavigate } from 'react-router-dom';
 import featuredStartups from './featuredStartups.json';
 import investors from './investors.json';
 import filters from './filters.json';
+import filters1 from './filter2.json';
 import investments from './investments.json';
 import heroImage from '../assets/image1.png';
 import categories from './categories.json';
-
 import Clarizone from '../assets/Clarizone Logo.png';
 
 export default function Homepage() {
   const navigate = useNavigate();
+
   const [viewType, setViewType] = useState('grid');
   const [currentSlide, setCurrentSlide] = useState(0);
   const [showFilters, setShowFilters] = useState(false);
@@ -19,18 +20,8 @@ export default function Homepage() {
     'Listing Status': [],
     'Revenue-Generating': [],
     'Asset Type': [],
-    'Industry': []
-  });
-
-
-
-  const handleSlideChange = (direction) => {
-    if (direction === 'next') {
-      setCurrentSlide((prev) => (prev + 1) % featuredStartups.length);
-    } else {
-      setCurrentSlide((prev) => (prev - 1 + featuredStartups.length) % featuredStartups.length);
-    }
-  };
+    'Industry': [],
+     });
 
   const handleFilterChange = (filterTitle, optionId, isChecked) => {
     setSelectedFilters(prev => ({
@@ -46,7 +37,9 @@ export default function Homepage() {
       'Listing Status': [],
       'Revenue-Generating': [],
       'Asset Type': [],
-      'Industry': []
+      'Industry': [],
+      'monthlyUser':[],
+     
     });
   };
 
@@ -65,7 +58,6 @@ export default function Homepage() {
           Get Started
         </button>
       </nav>
-
       {/* Hero Section */}
       <div className="max-w-7xl mx-auto px-4 py-8 md:py-16 grid md:grid-cols-2 gap-8 items-center">
         <img src={heroImage} alt="Team illustration" className="w-full max-w-md mx-auto md:order-1" />
@@ -98,7 +90,6 @@ export default function Homepage() {
           </button>
         </div>
       </div>
-
       {/* Featured Startups Section */}
       <div className="max-w-7xl mx-auto px-4 py-8 md:py-16">
         <h1 className="text-2xl md:text-3xl font-bold text-center mb-4">Featured Startups</h1>
@@ -143,7 +134,7 @@ export default function Homepage() {
       </div>
 
       {/* Categories Section */}
-      <div className="max-w-7xl mx-auto px-4 py-8 md:py-16">
+      <div className="max-w-7xl mx-auto px-4 py-8">
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-4">Browse Categories</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
           {categories.map((category) => (
@@ -175,19 +166,20 @@ export default function Homepage() {
           </button>
 
           {/* Filters Sidebar */}
-          <div className={`${showFilters ? "block" : "hidden"} md:block w-full md:w-64 transition-all duration-300`}>
+          <div className={`${showFilters ? "block" : "hidden"} md:block w-mid md:w-50 transition-all duration-300`}>
             <div className="bg-white p-4 rounded-lg shadow-lg">
-              <div className="flex justify-between items-center mb-4">
+              <div className="flex justify-between items-center mb-2">
                 <h2 className="font-semibold">Filter By</h2>
                 <button onClick={clearFilters} className="text-blue-600 text-sm">Clear</button>
               </div>
               <div className="space-y-6">
                 {filters.map((section) => (
                   <div key={section.title} className="border-t pt-4">
-                    <h3 className="font-medium mb-3 flex justify-between items-center">
+                    <h3 className="font-medium mb-2 flex justify-between items-center">
                       {section.title}
-                      <ChevronDown size={16} />
+                      <ChevronDown size={20}/>
                     </h3>
+                    
                     <div className="space-y-2">
                       {section.options.map((option) => (
                         <label key={option.id} className="flex items-center space-x-2">
@@ -195,14 +187,22 @@ export default function Homepage() {
                             type="checkbox"
                             checked={selectedFilters[section.title].includes(option.id)}
                             onChange={(e) => handleFilterChange(section.title, option.id, e.target.checked)}
-                            className="rounded border-gray-300 text-blue-600"
                           />
-                          <span className="text-sm">{option.label}</span>
-                        </label>
+                         <span className="text-sm">{option.label}</span>
+                     </label>
                       ))}
+                        <button onClick={clearFilters} className="text-blue-600 text-sm">more</button>
                     </div>
                   </div>
                 ))}
+                <div className='space-x-3'>
+                  {filters1.map((section1)=>(
+                 <h3 className="font-medium mb-2 flex justify-between items-center border-t">
+                  {section1.title}
+                  <ChevronRight size={20}/>
+                  </h3>
+                   ))}               
+                  </div>
               </div>
             </div>
           </div>
@@ -317,8 +317,8 @@ export default function Homepage() {
       </div>
 
       {/*Footer*/}
-      <footer className="bg-[#EEF1FF] px-4 py-8 mt-8">
-        <div className="max-w-7xl mx-auto">
+      <footer className="bg-[#EEF1FF] px-4 py-8 mt-8 w-full">
+        <div className="max-w-7xl mx-auto flex flex-col justify-between min-h-[200px]">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-8">
             <h2 className="text-2xl md:text-3xl font-bold text-center md:text-left">
               Connecting Startups & Investors
@@ -332,25 +332,27 @@ export default function Homepage() {
               </button>
             </div>
           </div>
-
           <div className="border-t border-gray-200 my-6"></div>
 
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <img src={Clarizone} alt="Clarizone Logo" className="w-32" />
             <div className="flex flex-wrap justify-center gap-4">
-              <a href="#" className="text-gray-600 hover:text-gray-900">Home</a>
-              <a href="#" className="text-gray-600 hover:text-gray-900">About</a>
-              <a href="#" className="text-gray-600 hover:text-gray-900">Contact</a>
+              <a href="#" className="text-gray-900 hover:text-gray-700 font-medium">Home</a>
+              <a href="#" className="text-gray-900 hover:text-gray-700 font-medium">How it Works</a>
+              <a href="#" className="text-gray-900 hover:text-gray-700 font-medium">Plans & Pricing</a>
+              <a href="#" className="text-gray-900 hover:text-gray-700 font-medium">Feature</a>
+              <a href="#" className="text-gray-900 hover:text-gray-700 font-medium">Products</a>
             </div>
             <div className="flex gap-4">
-              <Linkedin className="w-5 h-5 text-gray-600 hover:text-blue-600" />
-              <Instagram className="w-5 h-5 text-gray-600 hover:text-pink-600" />
-              <Facebook className="w-5 h-5 text-gray-600 hover:text-blue-600" />
-              <Twitter className="w-5 h-5 text-gray-600 hover:text-blue-400" />
+              <Linkedin className="w-5 h-5 text-blue-600 hover:text-blue-800" />
+              <Instagram className="w-5 h-5 text-pink-600 hover:text-pink-800" />
+              <Facebook className="w-5 h-5 text-blue-600 hover:text-blue-800" />
+              <Twitter className="w-5 h-5 text-blue-400 hover:text-blue-600" />
             </div>
           </div>
         </div>
       </footer>
+      
     </div>
   );
 }
