@@ -50,9 +50,9 @@ const FeaturedStartups = () => {
   };
 
   return (
-    <div className="relative px-10 py-6">
+    <div className="relative px-10 py-6 ">
       <button
-        className="absolute left-0 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-white shadow-lg hover:bg-gray-50 transition-all duration-300"
+        className="absolute left-0 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-blue-30 shadow-lg hover:bg-blue-100 transition-all duration-300"
         onClick={handlePrev}
         onMouseEnter={() => setHoveredArrow('prev')}
         onMouseLeave={() => setHoveredArrow(null)}
@@ -61,7 +61,7 @@ const FeaturedStartups = () => {
       </button>
 
       <button
-        className="absolute right-0 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-white shadow-lg hover:bg-gray-50 transition-all duration-300"
+        className="absolute right-0 top-1/2 -translate-y-1/2 z-10 p-2  rounded-full bg-whie shadow-lg hover:bg-blue-100 transition-all duration-300"
         onClick={handleNext}
         onMouseEnter={() => setHoveredArrow('next')}
         onMouseLeave={() => setHoveredArrow(null)}
@@ -77,7 +77,7 @@ const FeaturedStartups = () => {
         {featuredStartups.map((startup, index) => (
           <div
             key={startup.name}
-            className={`w-2xs ${index === currentSlide ? 'scale-100' : 'scale-95 opacity-70'}  snap-center bg-blue-70 rounded-lg shadow-xl p-4 mx-2`}
+            className={`w-2xs ${index === currentSlide ? 'scale-100' : 'scale-95 opacity-70'}  snap-center bg-blue-70 rounded-lg shadow-xl p-4 mx-2 ` } 
           >
             <div className="h-40 bg-blue-100 rounded-lg mb-4 flex items-center justify-center">
               <img src={startup.logo} alt={startup.name} className="w-24 h-24 object-contain" />
