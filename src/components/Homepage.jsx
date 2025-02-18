@@ -204,8 +204,13 @@ export default function Homepage() {
       </div>
 
       {/* Featured Startups Section */}
-      <div className="max-w-7xl mx-auto  h-150 px-2 py-4 md:py-16">
-        <h1 className="text-2xl md:text-3xl font-bold text-center mb-4">Featured Startups</h1>
+      <div className='gap-1.5'>
+     <h1 className='text-4xl text-center gap-0.5'>Discover Our Featured StartUps</h1>
+     <br />
+        <h3 className='text-center gap-2'>Explore a handpicked selection of high-growth start-ups,carefully curated for their innovation impact and growth potential</h3>
+      </div>
+      <div className="max-w-7xl mx-auto px-2 py-4 md:py-16">
+       <h2 className="text-2xl md:text-3xl font-bold text-center mb-4">Featured Startups</h2>
         <FeaturedStartups />
       </div>
 
