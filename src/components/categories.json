@@ -43,5 +43,20 @@
    
   ],
     "description": "Innovative e-commerce and retail startups offering unique shopping experiences and smart retail solutions."
+  },
+  {
+    "title": "E-commerce & Retail",
+    "companies": ["/src/assets/image12.png",
+    "/src/assets/image 21.png",
+    "/src/assets/image 18.png",
+    "/src/assets/image 27.png",
+    "/src/assets/image1.png",
+    "/src/assets/MediConnect.png",
+    "/src/assets/image 13.png",
+    "/src/assets/image MindBloom.png",
+    "/src/assets/image 21.png"
+   
+  ],
+    "description": "Innovative e-commerce and retail startups offering unique shopping experiences and smart retail solutions."
   }
 ]

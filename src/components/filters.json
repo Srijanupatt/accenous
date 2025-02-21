@@ -2,8 +2,8 @@
   {
     "title": "Listing Status",
     "options": [
-      { "id": "buy", "label": "Buy (3/63)"},
-      { "id": "off-market", "label": "Off-Market (69/64)" },
+      { "id": "buy","label": "Buy (2,103)"} ,
+      { "id": "off-market", "label": "Off-Market (69.6k)" },
       { "id": "invest", "label": "Invest (10)" }
     ]
   },
@@ -17,7 +17,7 @@
   {
     "title": "Asset Type",
     "options": [
-      { "id": "online-business", "label": "Online Businesses" },
+      { "id": "online-business","label": "Online Businesses" },
       { "id": "amazon", "label": "Amazon Stores & MOP" },
       { "id": "saas", "label": "SaaS" },
       { "id": "ecommerce", "label": "E-commerce" },
@@ -35,4 +35,5 @@
       { "id": "entertainment", "label": "Entertainment" }
     ]
   }
- ]
+]
+

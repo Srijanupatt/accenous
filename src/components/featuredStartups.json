@@ -1,4 +1,3 @@
-
 [
   {
      "name": "Greenspace",
@@ -15,6 +14,7 @@
       "raise": "₹50 Lakhs",
       "current": "₹24 Lakhs",
       "progress": 80
+      
 
   },
   {
@@ -32,5 +32,47 @@
     "raise": "₹20 Lakhs",
     "current":"₹8 Lakhs",
     "progress": 40
-  }
+  },
+
+  {
+    " name" : "EcoRider",
+     "logo": "src/assets/bike.png",
+     "description": "Eco-friendly electric bikes designed for urban commutes with a compact design",
+     "raise": "₹20 Lakhs",
+     "current":"₹8 Lakhs",
+     "progress": 40
+   },
+   {
+    " name" : "EcoRider",
+     "logo": "src/assets/bike.png",
+     "description": "Eco-friendly electric bikes designed for urban commutes with a compact design",
+     "raise": "₹20 Lakhs",
+     "current":"₹8 Lakhs",
+     "progress": 40
+   },
+   {
+    " name" : "EcoRider",
+     "logo": "src/assets/bike.png",
+     "description": "Eco-friendly electric bikes designed for urban commutes with a compact design",
+     "raise": "₹20 Lakhs",
+     "current":"₹8 Lakhs",
+     "progress": 40
+   },
+   {
+    " name" : "EcoRider",
+     "logo": "src/assets/bike.png",
+     "description": "Eco-friendly electric bikes designed for urban commutes with a compact design",
+     "raise": "₹20 Lakhs",
+     "current":"₹8 Lakhs",
+     "progress": 40
+   },
+   {
+    " name" : "EcoRider",
+     "logo": "src/assets/bike.png",
+     "description": "Eco-friendly electric bikes designed for urban commutes with a compact design",
+     "raise": "₹20 Lakhs",
+     "current":"₹8 Lakhs",
+     "progress": 40
+   }
+
 ]
