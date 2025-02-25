@@ -1,39 +1,38 @@
-[
-  {
-    "title": "Listing Status",
-    "options": [
-      { "id": "buy","label": "Buy (2,103)"} ,
-      { "id": "off-market", "label": "Off-Market (69.6k)" },
-      { "id": "invest", "label": "Invest (10)" }
-    ]
-  },
-  {
-    "title": "Revenue-Generating",
-    "options": [
-      { "id": "yes", "label": "Yes" },
-      { "id": "no", "label": "No" }
-    ]
-  },
-  {
-    "title": "Asset Type",
-    "options": [
-      { "id": "online-business","label": "Online Businesses" },
-      { "id": "amazon", "label": "Amazon Stores & MOP" },
-      { "id": "saas", "label": "SaaS" },
-      { "id": "ecommerce", "label": "E-commerce" },
-      { "id": "apps", "label": "AI Apps & Tools" },
-      { "id": "social", "label": "Social Media Account" }
-    ]
-  },
-  {
-    "title": "Industry",
-    "options": [
-      { "id": "technology", "label": "Technology" },
-      { "id": "education", "label": "Education" },
-      { "id": "health", "label": "Health & Wellness" },
-      { "id": "ecommerce-retail", "label": "E-commerce & Retail" },
-      { "id": "entertainment", "label": "Entertainment" }
-    ]
-  }
-]
-
+{
+  "filters": [
+    {
+      "title": "Listing Status",
+      "options": [
+        {"id": "Verified", "label": "buy(2,103)"},
+        {"id": "New", "label": "off market(69,6k"},
+        {"id": "Premium", "label": "invest"}
+      ]
+    },
+    {
+      "title": "Revenue Generating",
+      "options": [
+        {"id": "true", "label": "yes"},
+        {"id": "false", "label": "no"}
+      ]
+    },
+    {
+      "title": "Asset Type",
+      "options": [
+        {"id": "Digital", "label": "online Business"},
+        {"id": "E-commerce", "label": "Amazon Stores & kdp"},
+        {"id": "Software", "label": "Saas"},
+        {"id": "Blockchain", "label": "AI Apps & tool"}
+      ]
+    },
+    {
+      "title": "Industry",
+      "options": [
+        {"id": "Healthcare", "label": "Healthcare"},
+        {"id": "Education", "label": "Education"},
+        {"id": "Sustainability", "label": "Sustainability"},
+        {"id": "Finance", "label": "Finance"},
+        {"id": "Retail", "label": "Retail"}
+      ]
+    }
+  ]
+}

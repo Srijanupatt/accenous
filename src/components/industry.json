@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "name": "Technology",
+    "category": "Online Businesses",
+    "logo": "/src/assets/healthify.png",
+  
+    "type": "Technology",
+    "value": "₹1,03,75,000"
+  },
+  {
+    "id": 2,
+    "name": "Education",
+    "category": "Education",
+    "logo": "/src/assets/image 26.png",
+    
+    "type": "Education",
+    "value": "₹26,55,148"
+  },
+  {
+    "id": 3,
+    "name": "Health & Wellness",
+    "logo": "/src/assets/image 27.png",
+   "category": "Health & Wellness",
+    "industry": "Health & Wellness",
+    "type": "Health & Wellness",
+    "value": "₹69,86,000"
+  },{
+    "id": 4,
+    "name": "GreenHive Tech|Sustainability",
+    "logo": "/src/assets/image 27.png",
+   "category": "E-commerce & Retail",
+    "industry": "E-commerce & Retail",
+    "type": "E-commerce & Retail",
+    "value": "₹69,86,000"
+
+  },{
+    "id": 5,
+    "name": "GreenHive Tech|Sustainability",
+    "logo": "/src/assets/image 27.png",
+   "category": "E-commerce",
+    "industry": "E-commerce",
+    "type": "E-commerce",
+    "value": "₹69,86,000"
+  },{
+    "id": 6,
+    "name": "Entertainment",
+    "logo": "/src/assets/image 27.png",
+   "category": "Entertainment",
+    "industry": "Entertainment",
+    "type": "Entertainment",
+    "value": "₹69,86,000"
+
+  }
+  
+ 
+]

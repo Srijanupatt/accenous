@@ -33,7 +33,7 @@
     "monetization": "Subscriptions and Services",
     "revenue": "₹4,92,000 per month",
     "age": "3 Years",
-    "industry": "Education",
+    "industry": "Healthcare",
     "type": "Marketplace",
     "value": "₹69,86,000"
   },
@@ -76,5 +76,19 @@
     "listing_status": "Verified",
     "revenue_generating": true,
     "asset_type": "Blockchain"
+  },
+  {
+    
+      "id": 7,
+      "name": "GreenHive Tech|Sustainability",
+      "logo": "/src/assets/image 27.png",
+      "description": "An eco focused startup that provides IoT-based home gardening to reduce waste, promote sustainable living.",
+      "monetization": "Subscriptions and Services",
+      "revenue": "₹4,92,000 per month",
+      "age": "3 Years",
+      "industry": "Sustainability",
+      "type": "Sustainability",
+      "value": "₹69,86,000"
+    
   }
 ]
