@@ -26,9 +26,9 @@
     "progress": 88
   },
   {
-   " name" : "EcoRider",
+   "name" : "EcoRider",
     "logo": "src/assets/bike.png",
-    "description": "Eco-friendly electric bikes designed for urban commutes with a compact design",
+    "description": "Eco-friendly electric bikes designed for urban commutes with a compact design starts ",
     "raise": "₹20 Lakhs",
     "current":"₹8 Lakhs",
     "progress": 40
@@ -61,7 +61,7 @@
    {
     " name" : "EcoRider",
      "logo": "src/assets/bike.png",
-     "description": "Eco-friendly electric bikes designed for urban commutes with a compact design",
+     "description": "Eco-friendly electric bikes designed for urban commutes with a compact design ",
      "raise": "₹20 Lakhs",
      "current":"₹8 Lakhs",
      "progress": 40
@@ -69,7 +69,7 @@
    {
     " name" : "EcoRider",
      "logo": "src/assets/bike.png",
-     "description": "Eco-friendly electric bikes designed for urban commutes with a compact design",
+     "description": "Eco-friendly electric bikes designed for urban commutes with a compact design ",
      "raise": "₹20 Lakhs",
      "current":"₹8 Lakhs",
      "progress": 40

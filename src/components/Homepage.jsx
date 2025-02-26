@@ -45,8 +45,6 @@ export default function Homepage() {
 
   // Debugging: Log featuredStartups data
 
-  
-
   // Filter handling
   const handleFilterChange = (filterTitle, optionId, isChecked) => {
     setSelectedFilters((prev) => ({
@@ -203,19 +201,18 @@ export default function Homepage() {
           Browser Start-ups
         </button>
       </nav>
-
       {/* Hero Section */}
-      <div className="max-w-7xl mx-auto py-8 md:py-16 grid md:grid-cols-2 gap-8 items-center shadow-2xl">
+      <div className="max-w-7xl  mx-auto  grid md:grid-cols-2 gap-8 items-center shadow-xl">
         <div className="order-2 md:order-none relative">
           <img
             src={heroImage}
             alt="Team illustration"
             className="w-full max-w-md mx-auto relative z-10"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-blue-200 opacity-50 z-0"></div>
+          <div className="absolute  inset-0 bg-gradient-to-b from-transparent to-blue-200 opacity-full z-0"></div>
         </div>
-        <div className="text-center md:text-left order-1 md:order-none">
-          <span className="inline-block px-3 py-1 bg-purple-100 rounded-full  md:text-sm text-purple-600">
+        <div className="text-center md:text-left order-1 md:order-none ">
+          <span className="inline-block px-3 py-1  bg-purple-100 rounded-full  md:text-sm text-purple-600">
             solution for every Startup Hub
           </span>
           <h1 className="text-3xl md:text-5xl font-bold my-4 md:my-6">
@@ -242,7 +239,18 @@ export default function Homepage() {
           </div>
         </div>
       </div>
-
+      <div className="text-center max-w-3xl mx-auto mt-8">
+        <h3 className="text-blue-600 font-semibold text-sm">
+          Promising Ventures At Your Fingertips
+        </h3>
+        <h1 className="text-3xl font-bold mt-2">
+          Discover Our Featured Startups
+        </h1>
+        <p className="text-gray-500 text-base mt-2">
+          Explore a handpicked selection of high-growth start-ups, carefully
+          curated for their innovation, impact, and growth potential.
+        </p>
+      </div>
       {/* Featured Startups */}
       <div className="relative px-40 py-10 overflow-hidden">
         <div
@@ -278,54 +286,67 @@ export default function Homepage() {
           </button>
 
           {/* Startup Cards */}
-          {featuredStartups.slice(currentSlide * 4, (currentSlide + 1) * 4).map((startup, index) => (
-            <div
-              id={`startup-${currentSlide}-${index}`}
-              key={`${startup.name}-${index}`}
-              className={`bg-white border-1 startup-card transform transition-all duration-500 rounded-lg shadow-xl py-2 hover:scale-105 ${
-                isVisible[`startup-${currentSlide}-${index}`]
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-10"
-              }`}
-            >
-              <div className="relative group shadow-amber-100 bg-white py-4">
-                <div className="flex items-center justify-center overflow-hidden">
-                  <img
-                    src={startup.logo}
-                    alt={startup.name}
-                    className="w-full h-full object-contain transform transition-all duration-300 group-hover:scale-110"
-                  />
+          {featuredStartups
+            .slice(currentSlide * 4, (currentSlide + 1) * 4)
+            .map((startup, index) => (
+              <div
+                id={`startup-${currentSlide}-${index}`}
+                key={`${startup.name}-${index}`}
+                className={`bg-white  border-gray-300 border-1 hover:border-blue-800  hover:shadow-blue-500/50  opacity-20 startup-card transform transition-all duration-500 rounded-lg shadow-xl py-2 hover:scale-105 ${
+                  isVisible[`startup-${currentSlide}-${index}`]
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-10"
+                }`}
+              >
+                <div className="relative group shadow-amber-100 bg-white py-4">
+                  <div className="flex items-center justify-center overflow-hidden">
+                    <img
+                      src={startup.logo}
+                      alt={startup.name}
+                      className="w-full h-full object-contain transform transition-all duration-300 group-hover:scale-110"
+                    />
+                  </div>
+                  <div className="absolute inset-0 bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300 rounded-lg"></div>
                 </div>
-                <div className="absolute inset-0 bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300 rounded-lg"></div>
-              </div>
 
-              <h3 className="text-xl px-2 font-semibold mb-2">{startup.name}</h3>
-              <p className="text-gray-600 text-sm px-2 mb-4">{startup.description}</p>
-              <div className="space-y-2 px-2">
-                <div className="flex px-2 py-2 justify-between text-sm">
-                  <span>RAISE</span>
-                  <span>CURRENT</span>
-                </div>
-                <div className="flex justify-between font-semibold">
-                  <span>{startup.raise}</span>
-                  <span>{startup.current}</span>
-                </div>
-                <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
-                  <div
-                    className="bg-green-600 rounded-full h-2 transition-all duration-1000 ease-out"
-                    style={{
-                      width: isVisible[`startup-${currentSlide}-${index}`]
-                        ? `${startup.progress}%`
-                        : "0%",
-                    }}
-                  />
-                </div>
-                <div className="text-right text-sm text-blue-600 font-semibold">
-                  {startup.progress}%
+                <h3 className="text-xl px-2 font-semibold mb-2">
+                  {startup.name}
+                </h3>
+                <p className="text-gray-600 text-sm px-2 mb-4">
+                  {startup.description}
+                </p>
+
+                <div className="space-y-2  px-2 border-t   pt-6  border-t-gray-400 ">
+                  <div className="flex px-2 py-2 justify-between text-sm ">
+                    <div className="flex flex-col ">
+                      <span className="bg-text-gray-300">BASE</span>
+                      <span>INVESTMENT</span>
+                    </div>
+                    <div className="flex flex-col ">
+                      <span> CURRENT</span>
+                      <span>INVESTMENT</span>
+                    </div>
+                  </div>
+                  <div className="flex justify-between font-semibold">
+                    <span>{startup.raise}</span>
+                    <span>{startup.current}</span>
+                  </div>
+                  <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
+                    <div
+                      className="bg-blue-600 rounded-full h-2 transition-all duration-1000 ease-out"
+                      style={{
+                        width: isVisible[`startup-${currentSlide}-${index}`]
+                          ? `${startup.progress}%`
+                          : "0%",
+                      }}
+                    />
+                  </div>
+                  <div className="text-right text-sm text-blue-600 font-semibold">
+                    {startup.progress}%
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
         </div>
 
         {/* Pagination Dots */}
@@ -343,7 +364,6 @@ export default function Homepage() {
           )}
         </div>
       </div>
-
       {/* Categories Section */}
       <div className="max-w-7xl mx-auto px-4 py-8">
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-4">
@@ -370,7 +390,7 @@ export default function Homepage() {
           </button>
 
           {/* Categories Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3  gap-4  md:py-10  w-6xl transition-all duration-300">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4  md:py-10  w-6xl transition-all duration-300">
             {categories
               .slice(
                 currentSlide * itemsPerSlide,
@@ -379,7 +399,7 @@ export default function Homepage() {
               .map((category) => (
                 <div
                   key={category.title}
-                  className="bg-blue-50 rounded-2xl border-1 shadow-xl md:p-2"
+                  className="bg-blue-50 rounded-2xl  border-1 border-gray-300 shadow-xl md:p-2"
                 >
                   <h3 className="text-xl font-semibold mb-3">
                     {category.title}
@@ -435,7 +455,19 @@ export default function Homepage() {
           </div>
         </div>
       </div>
-
+      <div className="max-w-1xl px-30 mx-auto mt-8">
+        <p className="text-blue-800 font-semibold text-sm">
+          Find Investment Opportunities
+        </p>
+        <h1 className="text-3xl font-bold mt-2">
+          Explore Innovative Start-ups and Products
+        </h1>
+        <p className="text-gray-500 text-base mt-2">
+          Explore a curated selection of promising startups across diverse
+          industries. Find high-growth potential, emerging innovations, and
+          early-stage investments tailored for visionary investors.
+        </p>
+      </div>
       {/* Investment Explorer */}
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="flex flex-col lg:flex-row gap-8">
@@ -445,18 +477,18 @@ export default function Homepage() {
               showFilters ? "block" : "hidden"
             } lg:block w-full lg:w-72`}
           >
-            <div className="bg-white p-6 rounded-xl shadow-lg sticky top-6">
+            <div className="bg-white p-6 rounded-xl shadow-lg sticky top-6 border border-gray-300">
               <div className="flex justify-between items-center mb-6">
                 <h2 className="text-xl font-semibold">Filters</h2>
                 <button
                   onClick={clearFilters}
-                  className="text-blue-600 hover:text-blue-800 text-sm"
+                  className="text-blue-600 hover:text-blue-800  text-sm"
                 >
                   Clear All
                 </button>
               </div>
 
-              <div className="space-y-6">
+              <div className="space-y-6 ">
                 {filters?.map((section) => (
                   <FilterSection
                     key={section.title}
@@ -466,7 +498,7 @@ export default function Homepage() {
                 ))}
 
                 {additionalFilters?.map((section) => (
-                  <div key={section.title} className="pt-6 border-t">
+                  <div key={section.title} className="pt-4 border-t">
                     <h3 className="font-medium mb-2 flex justify-between items-center">
                       {section.title}
                       <ChevronRight size={20} />
@@ -478,12 +510,12 @@ export default function Homepage() {
           </div>
 
           {/* Main Content */}
-          <div className="flex-1  w-2xl h-30px ">
+          <div className="flex-1  w-2xl h-30px">
             {/* Controls */}
-            <div className="flex flex-col md:flex-row gap-4 mb-8">
+            <div className="flex   flex-col md:flex-row gap-4 mb-8">
               <div className="relative flex-1">
                 <Search
-                  className="absolute left-3 top-3.5 text-gray-400"
+                  className="absolute  left-3 top-3.5 text-gray-400"
                   size={20}
                 />
                 <input
@@ -529,7 +561,7 @@ export default function Homepage() {
 
             {/* Investment Grid */}
             <div
-              className={`  px-2  grid ${
+              className={`px-2  grid ${
                 viewType === "grid"
                   ? "grid-cols-1 md:grid-cols-2 lg:grid-cols-2 "
                   : "grid-cols-1"
@@ -538,7 +570,7 @@ export default function Homepage() {
               {filteredInvestments.slice(0, 4).map((investment) => (
                 <div
                   key={investment.id}
-                  className="border rounded-xl hover:shadow-lg   transition-all "
+                  className=" border border-gray-300  rounded-xl hover:shadow-lg   transition-all "
                 >
                   <div className="relative h-40px overflow-hidden  py-2 px-2 rounded-xl">
                     <img
@@ -580,6 +612,10 @@ export default function Homepage() {
                           {investment.industry}
                         </span>
                       </div>
+                      <div className="flex justify-between text-sm">
+                        <span className="text-gray-500">Set age :</span>
+                        <span className="font-medium">{investment.age}</span>
+                      </div>
                     </div>
 
                     <div className="flex gap-3">
@@ -594,29 +630,29 @@ export default function Homepage() {
                 </div>
               ))}
             </div>
-            </div>
+          </div>
         </div>
-      </div>'<div className="flex justify-center gap-2 mt-8">
-              <button className="p-2 rounded-full bg-gray-200 hover:bg-gray-300">
-                <ChevronLeft size={16} />
-              </button>
-              {[1, 2, 3].map((page) => (
-                <button
-                  key={page}
-                  className={`px-3 py-2 rounded-full ${
-                    page === 1 ? "bg-blue-600 text-white" : "bg-gray-200"
-                  }`}
-                >
-                  {page}
-                </button>
-              ))}
-              <button className="p-2 rounded-full bg-gray-200 hover:bg-gray-300">
-                <ChevronRight size={16} />
-              </button>
-            </div>'
-
- 
-      <div className="mt-8 md:mt-16 px-80 py-2 ">
+      </div>
+      '
+      <div className="flex justify-center gap-2 mt-8">
+        <button className="p-2  box-content rounded-lg  bg-gray-200 hover:bg-gray-300">
+          <ChevronLeft size={16} />
+        </button>
+        {[1, 2, 3, 4, 5].map((page) => (
+          <button
+            key={page}
+            className={`px-3 py-2 box-content rounded-md ${
+              page === 1 ? "bg-blue-600 text-white" : "bg-gray-200"
+            }`}
+          >
+            {page}
+          </button>
+        ))}
+        <button className="p-2  box-content rounded-md bg-gray-200 hover:bg-gray-300">
+          <ChevronRight size={16} />
+        </button>
+      </div>
+      <div className="mt-8 md:mt-16 px-40 ">
         <div className="text-center px-4 md:px-10 lg:px-20 py-10">
           <p className="text-blue-700 font-semibold uppercase text-sm">
             Real Stories From The People
@@ -630,85 +666,91 @@ export default function Homepage() {
             business growth.
           </p>
         </div>
-        <div className="grid grid-cols-1 bg-white-100 md:grid-cols-2 shadow-2xl rounded-2xl  ">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto px-4 py-10 bg-white">
           {investors.map((investor, index) => (
-            <div key={index} className="h-auto gap-2 p-12 rounded-lg py-8">
-              <div className="rounded-2xl md:px-12  bg-purple-100 ">
-                <p className="text-purple-40  italic mb-4">"{investor.text}"</p>
+            <div key={index} className="h-auto rounded-2xl">
+              {/* Testimonial Card */}
+              <div className="bg-blue-50 rounded-2xl p-6 shadow-md">
+                <p className="text-black italic mb-4">"{investor.text}"</p>
               </div>
-              <div className="text-left rounded-4xl gap-4px gap-2">
-                <h4 className="font-semibold">{investor.name}</h4>
-                <p className="text-sm text-gray-500">{investor.title}</p>
+
+              {/* Investor Details */}
+              <div className="mt-4 flex items-center space-x-3">
+                <div className="h-10 w-10 rounded-full"></div>
+                <div>
+                  <h4 className="font-semibold">{investor.name}</h4>
+                  <p className="text-sm text-gray-500">{investor.title}</p>
+                </div>
               </div>
             </div>
           ))}
         </div>
       </div>
+      <div className="px-40  md:p--7 ">
+        <footer className="bg-gradient-to-t from-blue-200 to-blue-50  rounded-2xl px-1 py-12 mt-8 w-full shadow-2xl">
+          <div className="max-w-7xl mx-auto flex flex-col justify-between min-h-[200px]">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-8">
+              <h2 className="text-2xl md:text-3xl font-bold  md:text-left">
+                <span>
+                  {" "}
+                  Connecting Startups with investors TO Fuel & Investors
+                </span>
+              </h2>
+              <div className="flex flex-col sm:flex-row gap-2">
+                <button className="bg-blue-600 text-white px-4 py-2 rounded-full  hover:bg-blue-700">
+                  Join Community
+                </button>
+                <button className="bg-black text-white px-4 py-2 rounded-full hover:bg-gray-800">
+                  Contact Us
+                </button>
+              </div>
+            </div>
+            <div className="border-t border-gray-400 my-7"></div>
 
-<div className="px-52 py-3">
-
-
-      <footer className="bg-[#EEF1FF]  rounded-2xl  px-1 py-12 mt-8 w-full">
-        <div className="max-w-7xl mx-auto flex flex-col justify-between min-h-[200px]">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-8">
-            <h2 className="text-2xl md:text-3xl font-bold text-center md:text-left">
-              Connecting Startups & Investors
-            </h2>
-            <div className="flex flex-col sm:flex-row gap-2">
-              <button className="bg-blue-600 text-white px-4 py-2 rounded-full  hover:bg-blue-700">
-                Join Community
-              </button>
-              <button className="bg-black text-white px-4 py-2 rounded-full hover:bg-gray-800">
-                Contact Us
-              </button>
+            <div className="flex flex-col md:flex-row justify-between  items-center gap-6">
+              <img src={Clarizone} alt="Clarizone Logo" className="w-32" />
+              <div className="flex flex-wrap justify-center gap-4">
+                <Link
+                  to="#"
+                  className="text-gray-900 hover:text-gray-700 font-medium"
+                >
+                  Home
+                </Link>
+                <Link
+                  to="#"
+                  className="text-gray-900 hover:text-gray-700 font-medium"
+                >
+                  How it Works
+                </Link>
+                <Link
+                  to="#"
+                  className="text-gray-900 hover:text-gray-700 font-medium"
+                >
+                  Plans & Pricing
+                </Link>
+                <Link
+                  to="#"
+                  className="text-gray-900 hover:text-gray-700 font-medium"
+                >
+                  Feature
+                </Link>
+                <Link
+                  to="#"
+                  className="text-gray-900 hover:text-gray-700 font-medium"
+                >
+                  Products
+                </Link>
+              </div>
+              <footer className="flex gap-4">
+                <Linkedin className="w-5 h-5 text-blue-600 hover:text-blue-800" />
+                <Instagram className="w-5 h-5 text-blue-600 hover:text-blue-800" />
+                <Facebook className="w-5 h-5 text-blue-600 hover:text-blue-800" />
+                <Twitter className="w-5 h-5 text-blue-400 hover:text-blue-600" />
+              </footer>
             </div>
           </div>
-          <div className="border-t border-gray-200 my-6"></div>
-
-          <div className="flex flex-col md:flex-row justify-between  items-center gap-6">
-            <img src={Clarizone} alt="Clarizone Logo" className="w-32" />
-            <div className="flex flex-wrap justify-center gap-4">
-              <Link
-                to="#"
-                className="text-gray-900 hover:text-gray-700 font-medium"
-              >
-                Home
-              </Link>
-              <Link
-                to="#"
-                className="text-gray-900 hover:text-gray-700 font-medium"
-              >
-                How it Works
-              </Link>
-              <Link
-                to="#"
-                className="text-gray-900 hover:text-gray-700 font-medium"
-              >
-                Plans & Pricing
-              </Link>
-              <Link
-                to="#"
-                className="text-gray-900 hover:text-gray-700 font-medium"
-              >
-                Feature
-              </Link>
-              <Link
-                to="#"
-                className="text-gray-900 hover:text-gray-700 font-medium"
-              >
-                Products
-              </Link>
-            </div>
-            <div className="flex gap-4">
-              <Linkedin className="w-5 h-5 text-blue-600 hover:text-blue-800" />
-              <Instagram className="w-5 h-5 text-pink-600 hover:text-pink-800" />
-              <Facebook className="w-5 h-5 text-blue-600 hover:text-blue-800" />
-              <Twitter className="w-5 h-5 text-blue-400 hover:text-blue-600" />
-            </div>
-          </div>
-        </div>
-      </footer>
+        </footer>
+      </div>
     </div>
-</div>
   );
 }

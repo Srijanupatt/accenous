@@ -6,7 +6,7 @@
     "logo": "/src/assets/healthify.png ",
     "description": "A health and wellness platform providing personalized fitness and diet plans. Connect with licensed nutritionists and the community.",
     "monetization":"Subscription and Affiliate Sales",
-    "Revenue": "₹8,43,250 per month",
+    "revenue":"₹8,43,250 per month",
     "age": "5 Years",
     "industry": "Health & Wellnes",
     "type": "SaaS Platform",
@@ -44,7 +44,8 @@
     "description": "Offering a curated section of products like eco friendly packaging, organic apparel, and zero waste essentials, this platform promotes a sustainable lifestyle",
    " monetization":"Sales and Subscription Model",
     "Net_Profi": "₹3,98,000 per month",
-   " age": "3 Years",
+    "revenue": "₹4,92,000 per month",
+   "age": "3 Years",
     "industry": "Eco-products",
    " type":" Marketplace",
     "value": "₹69,86,000"
