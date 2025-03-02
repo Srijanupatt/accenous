@@ -3,23 +3,23 @@
     {
       "title": "Listing Status",
       "options": [
-        {"id": "Verified", "label": "buy(2,103)"},
-        {"id": "New", "label": "off market(69,6k"},
-        {"id": "Premium", "label": "invest"}
+        {"id": "Verified", "label": "Buy(2,103)"},
+        {"id": "New", "label": "off-market(69,6k"},
+        {"id": "Premium", "label": "invest(10)"}
       ]
     },
     {
       "title": "Revenue Generating",
       "options": [
-        {"id": "true", "label": "yes"},
-        {"id": "false", "label": "no"}
+        {"id": "true", "label": "Yes"},
+        {"id": "false", "label": "No"}
       ]
     },
     {
       "title": "Asset Type",
       "options": [
-        {"id": "Digital", "label": "online Business"},
-        {"id": "E-commerce", "label": "Amazon Stores & kdp"},
+        {"id": "Digital", "label": "Online Business"},
+        {"id": "E-commerce", "label": "Amazon Stores & KDP"},
         {"id": "Software", "label": "Saas"},
         {"id": "Blockchain", "label": "AI Apps & tool"}
       ]

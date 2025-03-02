@@ -1,41 +1,46 @@
 [
   {
     "id": 1,
-    "name": "Healthify",
-    "category": "Health & Wellness",
+    "name": "Healthify | Health & Wellness",
+
     "logo": "/src/assets/healthify.png ",
-    "description": "A health and wellness platform providing personalized fitness and diet plans. Connect with licensed nutritionists and the community.",
+    "description": "A digital platfrom connection users with personalized fitness and diet plans,Ai recomadetion and the community.",
     "monetization":"Subscription and Affiliate Sales",
     "revenue":"₹8,43,250 per month",
     "age": "5 Years",
     "industry": "Health & Wellnes",
     "type": "SaaS Platform",
-    "value": "₹1,03,75,000"
+    "price": "₹1,03,75,000"
+  
   },
   {
     "id": 2,
     "name": "EduMarket | Education",
-    "category": "Education",
+   
     "logo":"/src/assets/image 26.png ",
-    "description": "Online learning marketplace helping educators connect with students and sell courses at scale.",
+    "description": "An 8-years-old marketplace connecting skilled volunteers with non profits and social enterpeises for skils based online.",
     "monetization": "Subscriptions and Services",
     "revenue": "₹4,53,200 per month",
     "age": "4 Years",
     "industry": "Education",
     "type": "Marketplace",
-    "value": "₹26,55,148"
+    "price": "₹26,55,148"
+    
+  
   },
   {
     "id": 3,
     "name": "GreenHive Tech|Sustainability",
     "logo": "/src/assets/image 27.png",
+    
     "description": "An eco focused startup that provides IoT-based home gardening to reduce waste, promote sustainable living.",
     "monetization": "Subscriptions and Services",
     "revenue": "₹4,92,000 per month",
     "age": "3 Years",
-    "industry": "Education",
+    "industry": "Sustainbility",
     "type": "Marketplace",
-    "value": "₹69,86,000"
+    "price": "₹69,86,000"
+
   },
   {
     "id": 4,
@@ -47,8 +52,8 @@
     "revenue": "₹4,92,000 per month",
    "age": "3 Years",
     "industry": "Eco-products",
-   " type":" Marketplace",
-    "value": "₹69,86,000"
+   "type":" Marketplace",
+    "price": "₹66,00,000"
   },
   {
     "id": 5,
@@ -58,7 +63,7 @@
     "type": "E-commerce",
     "industry": "Retail",
     "revenue": "₹25,00,000/month",
-    "value": "₹2,10,00,000",
+    "price": "₹2,10,00,000",
     "logo": "/src/assets/stylehub.png",
     "listing_status": "Premium",
     "revenue_generating": true,
@@ -72,10 +77,39 @@
     "type": "Software",
     "industry": "Finance",
     "revenue": "₹15,00,000/month",
-    "value": "₹1,50,00,000",
+    "price": "₹1,50,00,000",
     "logo": "/src/assets/finsecure.png",
     "listing_status": "Verified",
     "revenue_generating": true,
     "asset_type": "Blockchain"
+  },{
+    "id": 7,
+    "name": "FinSecure",
+    "description": "Blockchain-based financial security solutions",
+    "category": "FinTech",
+    "type": "Software",
+    "industry": "Healthcare",
+    "revenue": "₹15,00,000/month",
+    "price": "₹1,50,00,000",
+    "logo": "/src/assets/finsecure.png",
+    "listing_status": "Verified",
+    "revenue_generating":false 
+   
+  },
+  {
+
+    "id": 8,
+    "name": "FinSecure",
+    "description": "Blockchain-based financial security solutions",
+    "category": "FinTech",
+    "type": "Software",
+    "industry":"Sustainability",
+    "revenue": "₹15,00,000/month",
+    "price": "₹1,50,00,000",
+    "logo": "/src/assets/finsecure.png",
+    "listing_status": "Verified",
+    "revenue_generating": true
+    
   }
+ 
 ]
